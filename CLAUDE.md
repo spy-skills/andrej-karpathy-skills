@@ -1,5 +1,37 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+This is a **Claude Code plugin** that distributes behavioral guidelines for better LLM-assisted coding, inspired by Andrej Karpathy's observations on LLM coding pitfalls. It is a documentation-only project — there are no build, test, or lint commands.
+
+## Repository Structure
+
+- `CLAUDE.md` — The guidelines file (this file). Also the distributable product that users curl into their projects.
+- `skills/karpathy-guidelines/SKILL.md` — Skill definition with YAML frontmatter. Content mirrors CLAUDE.md guidelines.
+- `.claude-plugin/plugin.json` — Plugin manifest declaring the skill path.
+- `.claude-plugin/marketplace.json` — Marketplace listing metadata.
+- `EXAMPLES.md` — Detailed before/after code examples demonstrating each principle.
+- `README.md` — Installation instructions and principle overview.
+
+## Key Constraint
+
+The guidelines below (sections 1-4) are the product. They appear in three places that must stay in sync:
+1. This file (`CLAUDE.md`)
+2. `skills/karpathy-guidelines/SKILL.md`
+3. `README.md` (expanded form)
+
+When editing guidelines, update all three.
+
+## Plugin System
+
+Users install via `/plugin marketplace add forrestchang/andrej-karpathy-skills` then `/plugin install andrej-karpathy-skills@karpathy-skills`. The `plugin.json` `skills` array points to `./skills/karpathy-guidelines`, which must match the directory name exactly.
+
+---
+
+## Guidelines
+
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
